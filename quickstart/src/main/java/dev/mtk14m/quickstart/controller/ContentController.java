@@ -12,7 +12,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/content")
-@CrossOrigin(origins = "http://localhost:5173")  // On authorise les requete venant de cette adresse
+//@CrossOrigin(origins = "http://localhost:5173")  // On authorise les requete venant de cette adresse
+@CrossOrigin()
 public class ContentController {
 
     private final ContentCollectionRepository repository;

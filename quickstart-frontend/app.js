@@ -61,6 +61,7 @@ function saveContent(event) {
     event.preventDefault();
 
     const contentId = document.getElementById('content-id').value;
+    console.log(contentId)
     const content = {
         id: contentId || null,
         title: document.getElementById('title').value,
@@ -68,8 +69,8 @@ function saveContent(event) {
         status: document.getElementById('status').value,
         contentType: document.getElementById('contentType').value,
         dateCreated: contentId ? null : new Date().toISOString(),
-        dateupdated: new Date().toISOString(),
-        url: document.getElementById('url').value
+        dateUpdated: new Date().toISOString(),
+        url: document.getElementById('url').value || ""
     };
 
     const method = contentId ? 'PUT' : 'POST';
@@ -90,6 +91,7 @@ function saveContent(event) {
 }
 
 function editContent(id) {
+    console.log(id);
     fetch(`${API_URL}/${id}`)
         .then(response => response.json())
         .then(content => openModal(content))

@@ -1,9 +1,16 @@
 package dev.mtk14m.quickstart.model;
 
+import jakarta.persistence.Entity;
+import jakarta.validation.constraints.NotBlank;
+import org.springframework.data.annotation.Id;
+
 import java.time.LocalDateTime;
 
+@Entity
 public record Content(
-        Integer id,
+        @Id
+        Integer Id,
+        @NotBlank
         String title,
         String desc,
         Status status,

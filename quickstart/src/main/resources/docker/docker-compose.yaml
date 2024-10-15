@@ -1,0 +1,19 @@
+
+version: '3.1'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: cm-db
+    ports:
+      - "5432:5432"
+#Décommenter pour avoir des données persistantes
+#    volumes:
+#      - db-data:/var/lib/postgresql/data
+#
+#volumes:
+#  db-data:
